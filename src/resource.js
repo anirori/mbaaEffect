@@ -17,6 +17,8 @@ var res = {
   laser_particl2: "res/effect/particle2_texture.plist",
   fire2_particl1: "res/effect/Fireparticle4_texture.plist",
   fire2_particl2: "res/effect/Fireparticle5_texture.plist",
+  yami_particl1: "res/effect/yamiparticle1_texture.plist",
+  yami_particl2: "res/effect/yamiparticle2_texture.plist",
 };
 
 var g_resources = [];

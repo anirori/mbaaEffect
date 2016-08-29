@@ -1,6 +1,6 @@
 var size;
 var num = 0;
-var skillnum = [200, 200, 200];
+var skillnum = [200, 200, 200, 200];
 var suu = 0;
 var gameScene = cc.Scene.extend({
   onEnter: function() {
@@ -86,8 +86,8 @@ var particleLayer = cc.Layer.extend({
       this.removeAllChildren();
       this.skillSelect++;
       suu++;
-      this.skillSelect = this.skillSelect % 3;
-      if(suu > 2) suu = 0;
+      this.skillSelect = this.skillSelect % 4;
+      if(suu > 3) suu = 0;
 
     }
     //フレームをカウントする
@@ -95,16 +95,15 @@ var particleLayer = cc.Layer.extend({
   },
 //属性とスキルレベルと座標を与えてパーティクルを生成する関数
   skillParticle: function(attrib) {
-    var skillName = ["fire", "laser", "fire2"];
-    var x = [600, 600, 472, 370, 350, 357, 370, 330, 312, 320];
-    var y = [90, 90, 90, 155 , 155, 155, 155, 200, 200, 339];
-    var num2 = [4, 5, 4];
-    for(var i = 1; i < num2[attrib]; i++){
+    var skillName = ["fire", "laser", "fire2", "yami"];
+    var x = [600, 600, 472, 370, 350, 357, 650, 600];
+    var y = [90, 90, 155, 155 , 155, 155, 200, 155];
+    for(var i = 1; i < 3; i++){
       var sName = "res." + skillName[attrib] + "_particl" + i;
       var tempParticle = new cc.ParticleSystem(eval(sName));
       tempParticle.setPosition(x[num], y[num]);
       num++;
-      if(num > 9) num = 0;
+      if(num > 7) num = 0;
       tempParticle.setDuration(5);
       this.addChild(tempParticle, 20);
       tempParticle.setAutoRemoveOnFinish(true);
